@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Smart Grade</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/smartgrade.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+      <script src="shared/angular.js"></script>
+    <script src="https://code.angularjs.org/1.4.8/angular-sanitize.min.js"></script>
+    <script src="shared/angular-ui-bootstrap.js"></script>
+	<script src="shared/angular-route.js"></script>
+    <!-- <script src="shared/ui-router.js"></script> -->  
+    <script src="exApp.js"></script>
+    <script src="exAppRun.js"></script>
+    <script src="routers/exAcademicsRtr.js"></script>
+	<script src="controllers/exRootCtrl.js"></script>
+    <script src="services/exMenuSrv.js"></script>
+    <script src="lib/exBaseCtrl.js"></script>   
+    </head>
+<body ng-app="exApp" ng-controller="exRootCtrl">
+    <!--side-->
+    <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"></a>
+    <div id="sidebar-wrapper">
+        <div class="row">
+            <div class="quick">
+                <ul>
+                    <li><a href="">Student Admission </a></li>
+                    <li><a href="">Student List </a></li>
+                    <li><a href="">Class Allocation</a></li>
+                    <li><a href="">Student Category </a></li>
+                    <li><a href="">Id card Generation</a></li>
+                    <li><a href="">Bulk Upload</a></li>
+                    <li><a href="">Remarks</a></li>
+                </ul>
+            </div>
+            <div class="managequick">
+                <h4>Manage Quick</h4> </div>
+        </div>
+    </div>
+    <!--side-->
+    <div class="top-area">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse"> <span class="sr-only">Toggle navigation</span> </button>
+                    <a class="navbar-brand" href="#"><img src="images/logo.png" alt="logo" class="img-responsive"></a>
+                </div>
+                <div class="collapse navbar-collapse js-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown mega-dropdown" ng-repeat="menu in menus">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <div class="icon"><img src="images/icon/student.png" class="img-responsive"></div> {{menu.title}}</a>
+                            <ul class="dropdown-menu mega-dropdown-menu">
+                                <li class="col-sm-12">
+                                    <div class="well">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#student" data-toggle="tab">Student</a></li>
+                                            <li><a href="#attendance" data-toggle="tab">Attendance</a></li>
+                                            <li><a href="#timetable" data-toggle="tab">Time Table</a></li>
+                                            <li><a href="#library" data-toggle="tab">Library</a></li>
+                                            <li><a href="#certification" data-toggle="tab">Certification</a></li>
+                                            <li><a href="#whtasnew" data-toggle="tab">Whats New</a></li>
+                                        </ul>
+                                        <div id="myTabContent" class="tab-content">
+                                            <div class="tab-pane active in" id="student">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/student-2.png" class="img-responsive"></div> Student Admission </li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/student-2.png" class="img-responsive"></div> Student List </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/student-2.png" class="img-responsive"></div> Class Allocation </li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/student-2.png" class="img-responsive"></div> Student Category </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/student-2.png" class="img-responsive"></div> Id card Generation</li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/student-2.png" class="img-responsive"></div> Bulk Upload</li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/student-2.png" class="img-responsive"></div> Remarks </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="attendance">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/checking-attendance.png" class="img-responsive"></div> Attendance Register </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/checking-attendance.png" class="img-responsive"></div> Attendance Report </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/checking-attendance.png" class="img-responsive"></div> Day Wise Report</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="timetable">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/stopwatch.png" class="img-responsive"></div> Time Table Master </li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/stopwatch.png" class="img-responsive"></div> Set Period </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/stopwatch.png" class="img-responsive"></div> Set Week Days </li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/stopwatch.png" class="img-responsive"></div> Allocate Time Table </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/stopwatch.png" class="img-responsive"></div> Assign Subject</li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/stopwatch.png" class="img-responsive"></div> View Time table</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade in" id="library">
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Book Category</li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Book Details </li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Book Purchase</li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Barcode Print</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Book Issue </li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Book Return</li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Book Renewal</li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Book List</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Damaged/Scrap Book </li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Damaged/Scrap Book Report</li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Advance Booking Books</li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Date Wise Book Issue/Return Report</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Book Dues List</li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Student Wise Report</li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Staff Wise Report</li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Book Wise Report</li>
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/open-book2.png" class="img-responsive"></div> Book Issue/Return Report</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="certification">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/diploma.png" class="img-responsive"></div> Certificate Type</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/diploma.png" class="img-responsive"></div> Custom Certificate </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/diploma.png" class="img-responsive"></div> Generate Certificate </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="whtasnew">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/bell.png" class="img-responsive"></div> News</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/bell.png" class="img-responsive"></div> Events</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <ul class="sub-menu">
+                                                            <li>
+                                                                <div class="icon"><img src="images/icon/bell.png" class="img-responsive"></div> Notice</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="images/icon/avatar-.png" class="img-responsive"></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.nav-collapse -->
+            </nav>
+        </div>
+    </div>
+    <div class="main-body">
+    <div class="separate"></div>
+        <div class="container">
+        	 <div ng-view ></div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright"> Copyright @ eximotechnologies</p>
+        </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="shared/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".dropdown").hover(function () {
+                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true, true).slideDown("fast");
+                $(this).toggleClass('open');
+            }, function () {
+                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true, true).slideUp("fast");
+                $(this).toggleClass('open');
+            });
+        });
+    </script>
+    <script>
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+    </script>
+</body>
+
+</html>
