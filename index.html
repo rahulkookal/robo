@@ -17,11 +17,12 @@
     <script src="https://code.angularjs.org/1.4.8/angular-sanitize.min.js"></script>
     <script src="shared/angular-ui-bootstrap.js"></script>
 	<script src="shared/angular-route.js"></script>
-    <!-- <script src="shared/ui-router.js"></script> -->  
+    <script src="shared/ui-router.js"></script>  
     <script src="exApp.js"></script>
     <script src="exAppRun.js"></script>
     <script src="routers/exAcademicsRtr.js"></script>
 	<script src="controllers/exRootCtrl.js"></script>
+    <script src="controllers/accademics/exStudentAdmissionCtrl.js"></script>
     <script src="services/exMenuSrv.js"></script>
     <script src="lib/exBaseCtrl.js"></script>   
     </head>
@@ -272,7 +273,8 @@
     <div class="main-body">
     <div class="separate"></div>
         <div class="container">
-        	 <div ng-view ></div>
+        	 <!-- <div ng-view ></div> -->
+             <ui-view></ui-view>
         </div>
     </div>
     <footer class="footer">

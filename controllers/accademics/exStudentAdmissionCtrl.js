@@ -1,10 +1,10 @@
-exApp.controller('exTemplateCtrl', ['$scope',
+exApp.controller('exStudentAdmissionCtrl', ['$scope',
 function ($scope) {
 	//This is a common handler
 	BaseCtrl.call(this, $scope);
 
 	var init = function(){
-		$scope.logger("Initiating exTemplateCtrl");
+		$scope.logger("Initiating exStudentAdmissionCtrl");
 		// All Initail task should be done here.
 	};
 
