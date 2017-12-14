@@ -19,40 +19,41 @@ angular.module('App').service('boardSrv', ['motionSrv', function (motionSrv) {
                         [0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0,0],
                         [0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0,0]];
 
-    this.paths = [{
-        action : motionSrv.moveForward,
-        params: {
-            value : 10,
-            sequence_no: 5
-        }
-    },{
-        action : motionSrv.turnLeft,
-        params: {
-            value : 90,
-            sequence_no: 4
-        }
-    },{
-        action : motionSrv.moveForward,
-        params: {
-            value : 10,
-            sequence_no: 3
-        }
-    },{
-        action : motionSrv.turnLeft,
-        params: {
-            value : 90,
-            sequence_no: 2
-        }
-    },{
-        action : motionSrv.moveForward,
-        params: {
-            value : 10,
-            sequence_no: 1
-        }
-    }];
+
 
     this.updatePaths = function(arry){
-        this.paths = arry;
+        this.paths = [{
+            action : motionSrv.moveForward,
+            params: {
+                value : 10,
+                sequence_no: 5
+            }
+        },{
+            action : motionSrv.turnLeft,
+            params: {
+                value : 90,
+                sequence_no: 4
+            }
+        },{
+            action : motionSrv.moveForward,
+            params: {
+                value : 10,
+                sequence_no: 3
+            }
+        },{
+            action : motionSrv.turnLeft,
+            params: {
+                value : 90,
+                sequence_no: 2
+            }
+        },{
+            action : motionSrv.moveForward,
+            params: {
+                value : 10,
+                sequence_no: 1
+            }
+        }];
+        //this.paths = arry;
     };
 
     this.getPaths = function(arry){

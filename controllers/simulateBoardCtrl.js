@@ -17,6 +17,7 @@ App.controller('simulateBoardCtrl', ['$scope','boardSrv', 'motionSrv',
                 }
             });
             easystar.calculate();
+            boardSrv.updatePaths();
             poll();
 
         };
@@ -62,6 +63,7 @@ App.controller('simulateBoardCtrl', ['$scope','boardSrv', 'motionSrv',
         init();
 
         $scope.pollNew = function(){
+            boardSrv.updatePaths();
             poll();
         }
     }]);
