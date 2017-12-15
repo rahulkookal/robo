@@ -1,9 +1,9 @@
 angular.module('App').service('boardSrv', ['motionSrv', function (motionSrv) {
 
     this.boardMetrix = [[0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0,0],
-                        [0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0,0],
-                        [0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0,0],
-                        [0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0,0],
+                        [1,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0,0],
+                        [1,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0,0],
+                        [2,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0,0],
                         [0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0,0],
                         [0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0,0],
                         [0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0,0],
@@ -25,7 +25,7 @@ angular.module('App').service('boardSrv', ['motionSrv', function (motionSrv) {
         this.paths = [{
             action : motionSrv.moveForward,
             params: {
-                value : 10,
+                value : 50,
                 sequence_no: 5
             }
         },{
@@ -37,7 +37,7 @@ angular.module('App').service('boardSrv', ['motionSrv', function (motionSrv) {
         },{
             action : motionSrv.moveForward,
             params: {
-                value : 10,
+                value : 50,
                 sequence_no: 3
             }
         },{
@@ -49,7 +49,7 @@ angular.module('App').service('boardSrv', ['motionSrv', function (motionSrv) {
         },{
             action : motionSrv.moveForward,
             params: {
-                value : 10,
+                value : 50,
                 sequence_no: 1
             }
         }];

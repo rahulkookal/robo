@@ -66,10 +66,13 @@
      }
 
      .box {
-         height: 30px;
-         width: 30px;
+         height: 35px;
+         width: 35px;
          background: white;
          border: 1px solid black;
+     }
+     .path-red {
+         background-color: red !important;
      }
 
      .row:nth-child(2n+1) .box:nth-child(2n+1) {

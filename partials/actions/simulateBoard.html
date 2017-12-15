@@ -1,6 +1,11 @@
 <div class="content">
     <div class="row" ng-repeat="row in walkabilityMatrix track by $index">
-        <div class="box" ng-repeat="box in row track by $index"></div>
+        <!--<div ng-class="drawPath($index, $parent.$index)" class="box" ng-repeat="box in row track by $index" >-->
+            <!--{{$index}}{{ $parent.$index}}-->
+        <!--</div>-->
+        <div class="box" ng-class="drawPath($index, $parent.$index)" ng-repeat="box in row track by $index" >
+            <span>{{$index}}{{ $parent.$index}}</span>
+        </div>
     </div>
     <button ng-click="pollNew()"> Poll new</button>
 </div>
